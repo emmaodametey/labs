@@ -1,6 +1,9 @@
 package q1;
 
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 public abstract class  Trade {
 
     private String id;
@@ -8,11 +11,14 @@ public abstract class  Trade {
     private int quantity;
     private double price;
 
+    private LocalDateTime dateTime;
+
     public Trade(String id, String symbol, int quantity, double price){
         this.id =  id;
         this.symbol = symbol;
         this.quantity = quantity;
         this.price = price;
+        dateTime = LocalDateTime.now();
     }
 
     public Trade(String id, String symbol, int quantity){
@@ -36,6 +42,10 @@ public abstract class  Trade {
     @Override
     public String toString(){
         return "ID: " + id + ", symbol: " + symbol + ", quantity: " + quantity + ", price: " + price + " ";
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 
     public abstract void calcDividend();

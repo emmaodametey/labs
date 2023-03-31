@@ -16,14 +16,14 @@ public class Main {
 //        System.out.println(bond.toString());
 //        bond.calcDividend();
 
-        FundTrade fund = new FundTrade("F1", "FFL", 20, 18.0, 21.6F);
-        System.out.println(fund.toString());
-        fund.calcDividend();
+//        FundTrade fund = new FundTrade("F1", "FFL", 20, 18.0, 21.6F);
+//        System.out.println(fund.toString());
+//        fund.calcDividend();
 
 //        Client client = new Client("Emma", "Odametey");
 //        System.out.println(client.getMembership());
-//        client.addTrade(bond);
-//        client.addTrade(fund);
+//        client.newTrade(bond);
+//        client.newTrade(fund);
 //        System.out.println(client.getPoints());
 //
 //        System.out.println(client.getMembership());
@@ -32,6 +32,7 @@ public class Main {
 //        for(int i = 0; i < 15; i++){
 //            Trade newtrade = Trade("A"+i, "A"+ i+ i, i *5,i)
 //        }
+//        System.out.println(MembershipType.canTrade(7, new SilverMember(), 12000));
 
 
     }
