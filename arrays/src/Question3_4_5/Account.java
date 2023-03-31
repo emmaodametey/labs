@@ -1,8 +1,12 @@
 package Question3_4_5;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Account {
     private double  total_trades;
     private Trade[] trades;
+    private List<Trade> trades1 = new ArrayList<>();
     private int tradeIndex;
 
 
@@ -14,6 +18,10 @@ public class Account {
 
     public Trade[] getTrades() {
         return trades;
+    }
+
+    public List<Trade> getTrades1() {
+        return trades1;
     }
 
     public void setTrades(Trade[] trades) {
@@ -32,9 +40,14 @@ public class Account {
     }
 
     public void addTradeToArray(Trade trade){
-        this.trades[tradeIndex] = trade;
-        this.tradeIndex++;
+        this.trades[tradeIndex++] = trade;
     }
 
+    public void addTradeToList(Trade trade){
+        trades1.add(trade);
+    }
 
+    public int getTradeIndex() {
+        return tradeIndex;
+    }
 }

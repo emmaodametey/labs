@@ -18,25 +18,26 @@ public class Main {
         Trader trader = new Trader(account, "emma");
         Trade trade1 = new Trade("T1", "APPL", 100, 15.25);
         Trade trade2 = new Trade("T1", "APPL", 100, 4);
-        account.addTradeToArray(trade1);
-        account.addTradeToArray(trade2);
-        account.setTotal_trades(trade1);
-        account.setTotal_trades(trade2);
-        System.out.println("Total trade is: " + account.getTotal_trades());
+        account.addTradeToList(trade1);
+        account.addTradeToList(trade2);
+//        account.addTradeToArray(trade1);
+//        account.addTradeToArray(trade2);
+////        account.setTotal_trades(trade1);
+//        account.setTotal_trades(trade2);
+////        System.out.println("Total trade is: " + account.getTotal_trades());
 
-        for(int i = 0; i < account.getTrades().length; i++){
-            if(account.getTrades()[i] != null){
+
+
+        for(int i = 0; i < account.getTradeIndex(); i++){
                 System.out.println(account.getTrades()[i]);
-            }
-
         }
-        System.out.println("print trade prices less than 10");
-        for(int i = 0; i < account.getTrades().length; i++){
-            Trade thisTrade = account.getTrades()[i];
-            if( thisTrade != null && thisTrade.getPrice() < 10){
-                System.out.println(account.getTrades()[i]);
-            }
-
-        }
+//        System.out.println("print trade prices less than 10");
+//        for(int i = 0; i < account.getTradeIndex(); i++){
+//            Trade thisTrade = account.getTrades()[i];
+//            if(thisTrade.getPrice() < 10){
+//                System.out.println(account.getTrades()[i]);
+//            }
+//
+//        }
     }
 }
