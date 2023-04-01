@@ -1,9 +1,16 @@
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 public enum MembershipType {
 
     BRONZE(5){
         public boolean canTrade(int numOfTrades, double totalTradesToday){
-            if(numOfTrades < BRONZE.maxTrades){
-                return true;
+            LocalTime timeRestriction = LocalTime.of(10,0,0);
+            LocalTime timeNow = LocalTime.now();
+            if(timeNow.isAfter(timeRestriction)){
+                if(numOfTrades < BRONZE.maxTrades){
+                    return true;
+                }
             }
             return false;
         }
