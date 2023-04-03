@@ -1,14 +1,15 @@
 package q3;
 
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class Dealer {
     private final SuitesAndValues suitesAndValues = new SuitesAndValues();
-    private final Set<PlayingCard> deck;
+    private final ArrayList<PlayingCard> deck;
 
     public Dealer(){
-        deck = new TreeSet<>();
+        deck = new ArrayList<>();
         createDeck();
     }
 
@@ -21,10 +22,18 @@ public class Dealer {
     }
 
     public void shuffle(){
-
+        int i = 0;
+        while( i < 52){
+            int random1 = (int)(Math.random())* 52;
+            int random2 = (int)(Math.random())* 52;
+            PlayingCard holdCard = deck.get(random1);
+            deck.set(random1, deck.get(random2));
+            deck.set(random2, holdCard);
+            i++;
+        }
     }
 
-    public Set<PlayingCard> getDeck() {
+    public ArrayList<PlayingCard> getDeck() {
         return deck;
     }
 }
